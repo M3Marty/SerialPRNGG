@@ -13,4 +13,4 @@ extern long __serial_seed;
 // Random number in range of 0 to SERIAL_RAND_MAX
 #define serial_rand ((unsigned int) (__serial_next(__serial_seed) / 65536) % (SERIAL_RAND_MAX + 1))
 // Random number in range of [0 to 1]
-#define serial_random (serial_rand / SERIAL_RAND_MAX)
+#define serial_random ((double)serial_rand / (double)SERIAL_RAND_MAX)
